@@ -1,1 +1,74 @@
 {% extends 'baseutils/base.html' %}   
+
+{% block content %}
+
+<div class="pt-5">
+    <h2 class="mx-center pt-4" style="text-align: center;">Vad vill du göra?</h2>
+    <h6 class="mx-center text-muted" style="text-align:center; font-style:italic;"> 
+        Underrubrik underrubrik
+    </h6>
+    <div class="row w-75 mx-auto pt-4">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">1. Välj intervention</h5>
+              <p class="card-text" style="font-style: italic;"> Välj vilken metod du vill införa </p>
+              <a href="fyll-i/intervention" class="btn btn-primary">Gå vidare &#10230</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">2. Vad vill vi uppnå?</h5>
+                <p class="card-text" style="font-style: italic;"> Sätt upp och visualisera mål  </p>
+              <a href="fyll-i/uppna" class="btn btn-primary">Gå vidare &#10230</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">3. Sammanhang</h5>
+                <p class="card-text" style="font-style: italic;"> Beskriv situationen </p>
+                <a href="fyll-i/beskriv-situationen" class="btn btn-primary">Gå vidare &#10230</a>
+              </div>
+            </div>
+        </div>
+    </div>
+
+      <div class="row w-75 mx-auto pt-4">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">4. Ingredienser</h5>
+              <p class="card-text" style="font-style: italic;"> Beskriv kärnkomponenter </p>
+              <a href="fyll-i/ingredienser" class="btn btn-primary">Gå vidare &#10230</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Implementeringsstrategi</h5>
+              <p class="card-text" style="font-style: italic;"> Beskriv tillvägagångssätt </p>
+              <a href="fyll-i/implementeringsstrategi" class="btn btn-primary">Gå vidare &#10230</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">6. Anpassningar</h5>
+                <p class="card-text" style="font-style: italic;"> Relatera till kontexten  </p>
+                <a href="fyll-i/anpassningar" class="btn btn-primary">Gå vidare &#10230</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    
+</div>
+
+{% endblock %}
