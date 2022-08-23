@@ -20,5 +20,9 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('baseutils.urls')),
+    path('introduktion', include('introduktion.urls')),
+    path('fyll-i', include('fyll_i.urls')),
+    path('fardig-plan', include('fardig_plan.urls')),
+
 ]
 

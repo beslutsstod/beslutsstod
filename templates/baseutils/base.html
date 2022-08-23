@@ -2,9 +2,8 @@
 <html lang="en">  
 <head>  
     <meta charset="UTF-8">  
-    <title >
-        Beslutsstöd
-    </title>  
+    <title>{% block title %} Beslutsstöd {% endblock %}</title>
+
     {% load static %}  
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" > 
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
@@ -49,6 +48,7 @@
         </div>
       </nav>
 
-
+      {% block content %}
+      {% endblock %}
 </body>  
 </html>  
