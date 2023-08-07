@@ -7,6 +7,7 @@
     {% load static %}  
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" > 
     <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}" />    
 </head>  
 
@@ -22,15 +23,15 @@
           <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item ">
-                <a class="nav-link active" href="introduktion">Introduktion
+                <a class="nav-link active" href="/introduktion">Introduktion
                   <span class="visually-hidden">(current)</span>
                 </a>
               </li>
               <li class="nav-item px-5">
-                <a class="nav-link" href="fyll-i">Fyll i</a>
+                <a class="nav-link" href="/fyll-i">Fyll i</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="fardig-plan">Färdig plan</a>
+                <a class="nav-link" href="/fardig-plan">Färdig plan</a>
               </li>
               
     
@@ -50,5 +51,8 @@
 
       {% block content %}
       {% endblock %}
-</body>  
+</body>
+
+{% block script %}
+{% endblock %}
 </html>  

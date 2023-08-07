@@ -1,0 +1,56 @@
+{% extends 'baseutils/base.html' %}   
+
+{% block content %}
+<div class="w-50 mx-auto" style="padding-top: 15vh; text-align: justify;">
+  <h1 style="text-align: center;">
+      Välj intervention
+  </h1>
+  <p class="pt-5">
+    Börja med att skriva in vad metoden du ska införa heter.
+  </p>
+  <p>
+    Vissa evidensbaserade metoder har vi tillsammans med utvecklarna gjort en förarbetad mall till vilket kan underlätta ditt arbete. Listan är inte heltäckande och du behöver inte implementera en av nedanstående metoder för att kunna använda beslutsstödet.
+  </p>
+  <p>
+    Välj i listan nedan:
+  </p>
+  <ul class="list-group w-25">
+    <li class="list-group-item" data-value="ABC">
+      <label class="form-check-label w-100" for="firstRadio">
+        <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="firstRadio" checked>
+        ABC
+      </label>
+    </li>
+    <li class="list-group-item" data-value="KBT">
+      <label class="form-check-label w-100" for="secondRadio">
+        <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="secondRadio">
+        KBT
+      </label>
+    </li>
+    <li class="list-group-item" data-value="ACT">
+      <label class="form-check-label w-100" for="thirdRadio">
+        <input class="form-check-input me-1" type="radio" name="listGroupRadio" value="" id="thirdRadio">
+        ACT
+      </label>
+    </li>
+  </ul>
+  
+<p class="pt-3">
+  När du har valt metod kan du gå vidare till nästa steg.
+</p>
+  <a href="uppna" class="btn btn-primary">Gå vidare &#10230</a>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+  const listItems = document.querySelectorAll('.list-group-item');
+  listItems.forEach(item => {
+    item.addEventListener('click', function() {
+      const selectedValue = this.getAttribute('data-value');
+      localStorage.setItem('selectedInterventionMethod', selectedValue);
+    });
+  });
+</script>
+{% endblock %}
