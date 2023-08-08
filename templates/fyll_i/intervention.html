@@ -1,11 +1,11 @@
 {% extends 'baseutils/base.html' %}   
 
 {% block content %}
-<div class="w-50 mx-auto" style="padding-top: 15vh; text-align: justify;">
+<div class="w-50 mx-auto pt-5" style="text-align: justify;">
   <h1 style="text-align: center;">
       Välj intervention
   </h1>
-  <p class="pt-5">
+  <p class="pt-3">
     Börja med att skriva in vad metoden du ska införa heter.
   </p>
   <p>
@@ -41,9 +41,6 @@
   <a href="uppna" class="btn btn-primary">Gå vidare &#10230</a>
 </div>
 
-{% endblock %}
-
-{% block script %}
 <script>
   const listItems = document.querySelectorAll('.list-group-item');
   listItems.forEach(item => {
@@ -53,4 +50,7 @@
     });
   });
 </script>
+
 {% endblock %}
+
+
