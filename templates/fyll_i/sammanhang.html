@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+{% extends 'baseutils/base.html' %}   
+
+{% block content %}
+<div class="w-50 mx-auto content pt-5" style="justify-content: center; text-align: left;">
+    <h1 class="pt-3" style="text-align: center;">
+        Sammanhang
+    </h1>
+    <p class="pt-3">
+        Varje situation är unik. Det är därför sannolikt att den kontext där metoden tidigare använts (och utvärderats) skiljer sig åt från den aktuella kontexten. Det är därför av stor vikt att klargöra vilka kontextuella olikheter det kan finnas. 
+    </p>
+    <ul>
+        <li>
+            Typ av verksamhet
+            <ul>
+                <li>
+                    Skiljer sig verksamheten åt mellan den verksamhet som metoden ursprungligen utvecklats för och testats i och er verksamhet? Är metoden exempelvisutformad för slutenvård och ska nu utföras inom primärvård
+                </li>
+            </ul> 
+        </li>
+        <li>
+            Personal
+            <ul>
+                <li>
+                    Vilken personal finns tillgänglig för att utföra metoden?
+                </li>
+                <li>
+                    Skiljer sig personalens kompetens från de som ursprungligen utförde metoden?
+                </li>
+                <li>
+                    Använder ni metoden för en annan personalgrupp än vad den är utformad för? Exempelvis är metoden utformad för förskolepersonal och ska nu utföras av fritidsledare? 
+                </li>
+            </ul>
+        </li>
+        <li>
+            Målgrupp
+            <ul>
+                <li>
+                    Vänder ni er till en annan målgrupp än vad metoden ursprungligen var tänkt för? Exempelvis är metoden utformad för barn medan er målgrupp är unga vuxna eller avser ni till exempel att erbjuda metoden diagnos-specifikt till patienter med mer än en diagnos?
+                </li>
+            </ul>
+        </li>
+        <li>
+            Nationella eller kulturella olikheter
+            <ul>
+                <li>
+                    Finns det några nationella eller kulturella olikheter där metoden ska implementeras i jämförelse med där metoden togs fram? 
+                </li>
+            </ul>
+        </li>
+        <li>
+            Övriga?
+            <ul>
+                <li>
+                    Finns det några andra kontextuella skillnader än de som nämnts ovan? 
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <div class="container border - border-5 p-3">
+        <div class="row pb-1">
+          <div class="col-md-12">
+            <h5 class="text-uppercase">Sammanhang</h5>
+            <p> Var har det ursprungliga arbetssättet använts? Hur ser vårt sammanhang ut? <br>
+                <span style="font-style: italic; opacity: 0.6;"> Målgrupp, organisation, yrkesgrupp, annat? </span>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 pt-2">
+            <h5 class="h-100 text-secondary">Ursprungligt</h5>
+          </div>
+          <div class="col-md-6 pt-2">
+            <h5 class="text-info">Vår verksamhet</h5>
+          </div>
+        </div>
+        <div class="row pt-2 custom-input-row">
+          <div class="col-md-6">
+            <input type="text" class="form-control" placeholder="Fyll i ditt svar här">
+          </div>
+          <div class="col-md-6 d-flex">
+            <input type="text" class="form-control" placeholder="Fyll i ditt svar här">
+            <button class="btn btn-link delete-row-btn"><span>&times;</span></button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button class="btn btn-outline-primary mt-3 add-row-btn">Lägg till ny rad</button>
+          </div>
+        </div>
+      </div>
+
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+    // Delete row button
+    function setupDeleteRowButtons() {
+      const deleteRowButtons = document.querySelectorAll('.delete-row-btn');
+      deleteRowButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          this.closest('.row').remove();
+        });
+      });
+    }
+  
+      setupDeleteRowButtons();
+  
+      // Add row button
+      const addRowButton = document.querySelector('.add-row-btn');
+      const customInputRow = document.querySelector('.custom-input-row');
+      let rowCounter = 1;
+  
+      // Add row 
+      addRowButton.addEventListener('click', function() {
+        const newRow = document.createElement('div');
+        newRow.className = 'row pt-2 custom-input-row';
+        const col1 = document.createElement('div');
+        col1.className = 'col-md-6';
+        const input1 = document.createElement('input');
+        input1.type = 'text';
+        input1.className = 'form-control';
+        input1.placeholder = 'Fyll i ditt svar här';
+        col1.appendChild(input1);
+  
+        const col2 = document.createElement('div');
+        col2.className = 'col-md-6 d-flex';
+        const input2 = document.createElement('input');
+        input2.type = 'text';
+        input2.className = 'form-control';
+        input2.style = 'margin-right: 0px';
+        input2.placeholder = 'Fyll i ditt svar här';
+        col2.appendChild(input2);
+        const button2 = document.createElement('button');
+        button2.className = 'btn btn-link delete-row-btn'
+        const span2 = document.createElement('span');
+        span2.innerHTML = '&times';
+        button2.appendChild(span2);
+        col2.appendChild(button2);
+  
+        newRow.appendChild(col1);
+        newRow.appendChild(col2);
+  
+        addRowButton.parentNode.insertBefore(newRow, addRowButton);
+  
+        setupDeleteRowButtons();
+  
+      });
+  
+  
+  });
+  </script>
+{% endblock %}

@@ -1,0 +1,214 @@
+{% extends 'baseutils/base.html' %}   
+
+{% block content %}
+
+<div class="w-50 mx-auto" style="justify-content: center;">
+  <!-- Page 1 -->
+  <div class="content pt-5" style="text-align: left;" id="page1">
+    <h1 class="pt-3" style="text-align: center;">
+        Vad vill vi uppnå?
+    </h1>
+    <p class="pt-3">
+      <ul>
+        <li>
+          Innan man sätter igång med en förändring eller ett arbetssätt är det bra att tänka ut vad det är man vill åstadkomma, även om det kan tyckas självklart.
+        </li>
+        <li>
+          Att visualisera målet hjälper oss att ta reda på hur vi ska nå dit.
+        </li>
+        <li>
+          Att ha ett tydligt mål gör det lättare att veta om man är på rätt väg. Det är viktigt när man sedan börjar överväga anpassningar , och för att kunna bedöma vad man bör och inte bör göra/fortsätta med. 
+        </li>
+      </ul>
+    </p>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="content pt-5" style="text-align: left; display: none;" id="page2">
+    <h3 style="text-align: center;">
+        Brainstorming
+    </h3>
+    <p class="pt-1">
+      Klicka på länken nedan och fyll i förslag. När du är klar kommer återgår du till den här sidan.
+    </p>
+    <div style="position: relative; padding-bottom: 56.25%; padding-top: 35px; height: 0; overflow: hidden;">
+      <iframe sandbox="allow-scripts allow-same-origin" allowfullscreen="true" allowtransparency="true" frameborder="0" height="315" src="#" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" width="420"></iframe>
+    </div>
+  </div>
+
+  
+  <!-- Page 3 -->
+  <div class="content pt-5" style="text-align: left; display: none;" id="page3">
+    <h1 class="pt-3" style="text-align: center;">
+        Vad vill vi uppnå?
+    </h1>
+    <p class="pt-4">
+      När man ska införa ett nytt arbetsätt är det viktigt att ha ett tydligt mål.
+      Vad var nyttan med ursprungsversionen och vad vill ni uppnå? 
+    </p>
+    <p>
+      Notera skillnaderna mellan det ni vill uppnå och det man förväntas uppnå med originalmetoden. Om nyttorna skiljer sig kan metoden behöva anpassas!
+    </p>
+
+    <div class="container border - border-5 p-3">
+      <div class="row pb-1">
+        <div class="col-md-12">
+          <h5 class="text-uppercase">Positiva konsekvenser</h5>
+          <p>Vad har man kunnat uppnå med det ursprungliga arbetssättet? Vad vill vi uppnå?</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 pt-2">
+          <h5 class="h-100 text-secondary">Ursprungligt</h5>
+        </div>
+        <div class="col-md-6 pt-2">
+          <h5 class="text-info">Vår verksamhet</h5>
+        </div>
+      </div>
+      <div class="row pt-2 custom-input-row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Fyll i ditt svar här">
+        </div>
+        <div class="col-md-6 d-flex">
+          <input type="text" class="form-control" placeholder="Fyll i ditt svar här">
+          <button class="btn btn-link delete-row-btn"><span>&times;</span></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button class="btn btn-outline-primary mt-3 add-row-btn">Lägg till ny rad</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="content pt-5" style="text-align: left; display: none;" id="page4">
+    <h1 class="pt-3" style="text-align: center;">
+      Hur vet vi om vi är på rätt väg?
+    </h1>
+    <p class="pt-3">
+      Exempel
+    </p>
+  </div>
+
+  <!-- Page 5 -->
+  <div class="content pt-5" style="text-align: left; display: none;" id="page5">
+    <h1 class="pt-3" style="text-align: center;">
+      Hur vet vi om vi är på rätt väg? 2
+    </h1>
+    <p class="pt-3">
+      Exempel 2
+    </p>
+  </div>
+
+
+  <!-- Pagination nav -->
+  <nav aria-label="Page navigation" style="position: absolute; bottom: 5px; justify-content: center; left: 50%; transform: translateX(-50%);" id="uppna-nav">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link active" href="#" data-page="page1"></a></li>
+      <li class="page-item"><a class="page-link" href="#" data-page="page2"></a></li>
+      <li class="page-item"><a class="page-link" href="#" data-page="page3"></a></li>
+      <li class="page-item"><a class="page-link" href="#" data-page="page4"></a></li>
+      <li class="page-item"><a class="page-link" href="#" data-page="page5"></a></li>
+
+    </ul>
+  </nav>
+  
+
+</div>
+
+<!-- Pagination -->
+
+<script>
+  // Make pagination
+  const contentDivs = document.querySelectorAll(".content");
+  const pageLinks = document.querySelectorAll(".pagination .page-link")
+
+  pageLinks.forEach(link => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const targetPage = this.getAttribute('data-page');
+      
+      // Hide all other divs
+      contentDivs.forEach(div => {
+        div.style.display = 'none';
+      });
+
+      // Change status for which page is active
+      pageLinks.forEach(link =>{
+        link.classList.remove("active");
+      });
+
+      this.classList.add("active");
+      
+      // Show correct div based on nav click
+      document.getElementById(targetPage).style.display = "block";
+    });
+  });
+
+  // Page 3
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+  // Delete row button
+  function setupDeleteRowButtons() {
+    const deleteRowButtons = document.querySelectorAll('.delete-row-btn');
+    deleteRowButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        this.closest('.row').remove();
+      });
+    });
+  }
+
+    setupDeleteRowButtons();
+
+    // Add row button
+    const addRowButton = document.querySelector('.add-row-btn');
+    const customInputRow = document.querySelector('.custom-input-row');
+    let rowCounter = 1;
+
+    // Add row 
+    addRowButton.addEventListener('click', function() {
+      const newRow = document.createElement('div');
+      newRow.className = 'row pt-2 custom-input-row';
+      const col1 = document.createElement('div');
+      col1.className = 'col-md-6';
+      const input1 = document.createElement('input');
+      input1.type = 'text';
+      input1.className = 'form-control';
+      input1.placeholder = 'Fyll i ditt svar här';
+      col1.appendChild(input1);
+
+      const col2 = document.createElement('div');
+      col2.className = 'col-md-6 d-flex';
+      const input2 = document.createElement('input');
+      input2.type = 'text';
+      input2.className = 'form-control';
+      input2.style = 'margin-right: 0px';
+      input2.placeholder = 'Fyll i ditt svar här';
+      col2.appendChild(input2);
+      const button2 = document.createElement('button');
+      button2.className = 'btn btn-link delete-row-btn'
+      const span2 = document.createElement('span');
+      span2.innerHTML = '&times';
+      button2.appendChild(span2);
+      col2.appendChild(button2);
+
+      newRow.appendChild(col1);
+      newRow.appendChild(col2);
+
+      addRowButton.parentNode.insertBefore(newRow, addRowButton);
+
+      setupDeleteRowButtons();
+
+    });
+
+
+});
+</script>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

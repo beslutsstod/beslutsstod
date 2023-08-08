@@ -1,0 +1,57 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>{% block title %} Beslutsstöd {% endblock %}</title>
+
+    {% load static %}  
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" > 
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" >
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'img/favicon-32x32.png' %}" />    
+</head>  
+
+<body>  
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="opacity: 0.95">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/" style="font-weight: 500;">   Beslutsstöd </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item ">
+                <a class="nav-link active" href="/introduktion">Introduktion
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item px-5">
+                <a class="nav-link" href="/fyll-i">Fyll i</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/fardig-plan">Färdig plan</a>
+              </li>
+              
+    
+            </ul>
+        </div>
+            <div>
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" href="utloggad">Logga ut
+                      <span class="visually-hidden">(current)</span>
+                    </a>
+                  </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {% block content %}
+      {% endblock %}
+</body>
+
+
+</html>  
