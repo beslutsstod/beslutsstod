@@ -4,7 +4,7 @@
 
 <div class="w-50 mx-auto" style="justify-content: center;">
   <!-- Page 1 -->
-  <div class="content pt-5" style="text-align: left; display: none;" id="page1">
+  <div class="content pt-5" style="text-align: left;" id="page1">
     <h1 class="pt-3" style="text-align: center;">
         Vad vill vi uppnå?
     </h1>
@@ -24,7 +24,7 @@
   </div>
 
   <!-- Page 2 -->
-  <div class="content pt-5" style="text-align: left; display:none;" id="page2">
+  <div class="content pt-5" style="text-align: left; display: none;" id="page2">
     <h3 style="text-align: center;">
         Brainstorming
     </h3>
@@ -38,7 +38,7 @@
 
   
   <!-- Page 3 -->
-  <div class="content pt-5" style="text-align: left;" id="page3">
+  <div class="content pt-5" style="text-align: left; display: none;" id="page3">
     <h1 class="pt-3" style="text-align: center;">
         Vad vill vi uppnå?
     </h1>
@@ -82,13 +82,36 @@
     </div>
   </div>
 
+  <!-- Page 4 -->
+  <div class="content pt-5" style="text-align: left; display: none;" id="page4">
+    <h1 class="pt-3" style="text-align: center;">
+      Hur vet vi om vi är på rätt väg?
+    </h1>
+    <p class="pt-3">
+      Exempel
+    </p>
+  </div>
+
+  <!-- Page 5 -->
+  <div class="content pt-5" style="text-align: left; display: none;" id="page5">
+    <h1 class="pt-3" style="text-align: center;">
+      Hur vet vi om vi är på rätt väg? 2
+    </h1>
+    <p class="pt-3">
+      Exempel 2
+    </p>
+  </div>
+
 
   <!-- Pagination nav -->
   <nav aria-label="Page navigation" style="position: absolute; bottom: 5px; justify-content: center; left: 50%; transform: translateX(-50%);" id="uppna-nav">
     <ul class="pagination">
-      <li class="page-item"><a class="page-link" href="#" data-page="page1"></a></li>
+      <li class="page-item"><a class="page-link active" href="#" data-page="page1"></a></li>
       <li class="page-item"><a class="page-link" href="#" data-page="page2"></a></li>
-      <li class="page-item"><a class="page-link active" href="#" data-page="page3"></a></li>
+      <li class="page-item"><a class="page-link" href="#" data-page="page3"></a></li>
+      <li class="page-item"><a class="page-link" href="#" data-page="page4"></a></li>
+      <li class="page-item"><a class="page-link" href="#" data-page="page5"></a></li>
+
     </ul>
   </nav>
   
@@ -123,6 +146,8 @@
       document.getElementById(targetPage).style.display = "block";
     });
   });
+
+  // Page 3
 
   document.addEventListener('DOMContentLoaded', function() {
 

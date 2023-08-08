@@ -9,3 +9,6 @@ def intervention(request):
 
 def uppna(request):
     return render(request, 'fyll_i/uppna.html')
+
+def sammanhang(request):
+    return render(request, 'fyll_i/sammanhang.html')
